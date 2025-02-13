@@ -1,0 +1,6 @@
+import static org.assertj.core.api.AssertionsThat;
+
+public class BasicAlgSortTest {
+
+    @Test
+}
