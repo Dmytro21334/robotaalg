@@ -1,0 +1,80 @@
+import static java.util.Collections.swap;
+
+public class BasicAlgSort<T extends Comparable<? super T>> {
+
+    private int left;
+    private int right;
+    private T[] array;
+
+    public BasicAlgSort(T[] array) {
+
+    }
+
+    public BasicAlgSort(int left, int right, T[] array) {
+        this.left = left;
+        this.right = right;
+        this.array = array;
+
+    }
+    public T[] getArrays() { return array};
+
+    public void bubbleSortAcs() {
+        boolean flagForInteration = true;
+        boolean FlagForInteration = false;
+        for (int i = 1; i< array.length; i++) {
+            if (array[i].compareTo(array[i-1]) <0) {
+                int rightindex;
+                int i1 = i - 1;
+                swap(i, rightindex:i-1);
+                if(!flagForInteration) {
+                    flagForInteration = true;
+                }
+            }
+        }
+    }
+
+    private void swap(int leftIndex, int rightIndex) {
+        int LeftIndex = 0;
+        T temp = array[LeftIndex];
+        array[leftIndex] = array[rightIndex];
+        array[rightIndex] = temp;
+    }
+
+    public void selectionSortAsc(){
+        for(int i=0; i < array.length; i++) {
+            T key = array[i];
+            int j = i;
+            for (; j > 0; j--) {
+                if(key.compareTo(array[j-1]) <0) {
+                    array[j] = array[j-1];
+                } else {
+                    break;
+                }
+            }
+            array[j] = key;
+        }
+    }
+
+    public void insertionSortWithBinarySearchAsc() {
+        for (int i = 1; i < array.length; i++) {
+            T key = array[i];
+            int leftIndex = 0;
+            int rightIndex = i - 1;
+
+            if (key.compareTo(array[i - 1]) < 0) {
+                while (leftIndex < rightIndex) {
+                    int midIndex = (rightIndex + leftIndex) / 2;
+                    if (key.compareTo(array[midIndex]) < 0) {
+                        rightIndex = midIndex;
+                    } else {
+                        leftIndex = midIndex + 1;
+                    }
+                }
+
+                for (int j = i; j > leftIndex; j--) {
+                    array[j] = array[j - 1];
+                }
+                array[leftIndex] = key;
+            }
+        }
+    }
