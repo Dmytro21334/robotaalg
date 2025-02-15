@@ -1,6 +1,32 @@
-import static org.assertj.core.api.AssertionsThat;
+import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class BasicAlgSortTest {
 
     @Test
+    public void testBubbleSortDesc() {
+        Integer[] sourceArray = {5, 4, 10, 2, 1};
+        Integer[] destArray = {10, 5, 4, 2, 1};
+        BasicAlgSort<Integer> integerBasicAlgSort = new BasicAlgSort<>(sourceArray);
+        integerBasicAlgSort.bubbleSortDesc();
+        assertThat(integerBasicAlgSort.getArray()).containsExactly(destArray);
+    }
+
+    @Test
+    public void testSelectionSortDesc() {
+        Integer[] sourceArray = {5, 4, 10, 2, 1};
+        Integer[] destArray = {10, 5, 4, 2, 1};
+        BasicAlgSort<Integer> integerBasicAlgSort = new BasicAlgSort<>(sourceArray);
+        integerBasicAlgSort.selectionSortDesc();
+        assertThat(integerBasicAlgSort.getArray()).containsExactly(destArray);
+    }
+
+    @Test
+    public void testInsertionSortDesc() {
+        Integer[] sourceArray = {5, 4, 10, 2, 1};
+        Integer[] destArray = {10, 5, 4, 2, 1};
+        BasicAlgSort<Integer> integerBasicAlgSort = new BasicAlgSort<>(sourceArray);
+        integerBasicAlgSort.insertionSortDesc();
+        assertThat(integerBasicAlgSort.getArray()).containsExactly(destArray);
+    }
 }
