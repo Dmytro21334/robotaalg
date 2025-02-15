@@ -1,4 +1,4 @@
-import static java.util.Collections.swap;
+import java.util.Arrays;
 
 public class BasicAlgSort<T extends Comparable<? super T>> {
 
@@ -7,51 +7,47 @@ public class BasicAlgSort<T extends Comparable<? super T>> {
     private T[] array;
 
     public BasicAlgSort(T[] array) {
-
+        this.array = Arrays.copyOf(array, array.length);
     }
 
     public BasicAlgSort(int left, int right, T[] array) {
         this.left = left;
         this.right = right;
-        this.array = array;
-
+        this.array = Arrays.copyOfRange(array, left, right);
     }
-    public T[] getArrays() { return array};
 
-    public void bubbleSortAcs() {
-        boolean flagForInteration = true;
-        boolean FlagForInteration = false;
-        for (int i = 1; i< array.length; i++) {
-            if (array[i].compareTo(array[i-1]) <0) {
-                int rightindex;
-                int i1 = i - 1;
-                swap(i, rightindex:i-1);
-                if(!flagForInteration) {
-                    flagForInteration = true;
+    public T[] getArray() { 
+        return array; 
+    }
+
+    public void bubbleSortAsc() {
+        boolean flagForIteration;
+        do {
+            flagForIteration = false;
+            for (int i = 1; i < array.length; i++) {
+                if (array[i].compareTo(array[i - 1]) < 0) {
+                    swap(i, i - 1);
+                    flagForIteration = true;
                 }
             }
-        }
+        } while (flagForIteration);
     }
 
     private void swap(int leftIndex, int rightIndex) {
-        int LeftIndex = 0;
-        T temp = array[LeftIndex];
+        T temp = array[leftIndex];
         array[leftIndex] = array[rightIndex];
         array[rightIndex] = temp;
     }
 
-    public void selectionSortAsc(){
-        for(int i=0; i < array.length; i++) {
-            T key = array[i];
-            int j = i;
-            for (; j > 0; j--) {
-                if(key.compareTo(array[j-1]) <0) {
-                    array[j] = array[j-1];
-                } else {
-                    break;
+    public void selectionSortAsc() {
+        for (int i = 0; i < array.length; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j].compareTo(array[minIndex]) < 0) {
+                    minIndex = j;
                 }
             }
-            array[j] = key;
+            swap(i, minIndex);
         }
     }
 
@@ -78,3 +74,4 @@ public class BasicAlgSort<T extends Comparable<? super T>> {
             }
         }
     }
+}
