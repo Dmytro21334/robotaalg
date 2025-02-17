@@ -1,5 +1,6 @@
 import org.testng.annotations.Test;
 
+import java.util.Objects;
 import java.util.Random;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -11,7 +12,7 @@ public class BasicAlgSortTest {
         Integer[] sourceArray = {5, 4, 10, 2, 1};
         BasicAlgSort<Integer> integerBasicAlgSort = new BasicAlgSort<>(sourceArray);
         integerBasicAlgSort.bubbleSortDesc();
-        assertThat(integerBasicAlgSort.getArray()).notifyAll();
+        Objects.requireNonNull(assertThat(integerBasicAlgSort.getArray())).notifyAll();
     }
 
     private Object assertThat(Integer array) {
@@ -23,7 +24,7 @@ public class BasicAlgSortTest {
         Integer[] sourceArray = {5, 4, 10, 2, 1};
         BasicAlgSort<Integer> integerBasicAlgSort = new BasicAlgSort<>(sourceArray);
         integerBasicAlgSort.selectionSortDesc();
-        assertThat(integerBasicAlgSort.getArray()).notifyAll();
+        Objects.requireNonNull(assertThat(integerBasicAlgSort.getArray())).notifyAll();
     }
 
     @Test
@@ -31,7 +32,7 @@ public class BasicAlgSortTest {
         Integer[] sourceArray = {5, 4, 10, 2, 1, 8 -5, 0};
         BasicAlgSort<Integer> integerBasicAlgSort = new BasicAlgSort<>(sourceArray);
         integerBasicAlgSort.insertionSortDesc();
-        assertThat(integerBasicAlgSort.getArray()).notifyAll();
+        Objects.requireNonNull(assertThat(integerBasicAlgSort.getArray())).notifyAll();
     }
 
     @Test
@@ -39,7 +40,7 @@ public class BasicAlgSortTest {
         Integer[] sourceArray = {5, 4, 10, 2, 1, 8 -5, 0};
         BasicAlgSort<Integer> integerBasicAlgSort = new BasicAlgSort<>(sourceArray);
         integerBasicAlgSort.insertionSortDesc();
-        assertThat(integerBasicAlgSort.getArray()).notifyAll();
+        Objects.requireNonNull(assertThat(integerBasicAlgSort.getArray())).notifyAll();
     }
 
     public static Integer[] getRandomInteger(int n) {
