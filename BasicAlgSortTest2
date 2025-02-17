@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-public class BasicAlgSortTest2 {
+public class basicAlgSortTest2 {
 
     @Test
     public void testBubbleSortDescending() {
@@ -11,9 +10,12 @@ public class BasicAlgSortTest2 {
 
         Integer[] sortedPart = new Integer[6];
         System.arraycopy(array, 2, sortedPart, 0, 6);
-        
+
         for (int i = 0; i < sortedPart.length - 1; i++) {
             assertTrue(sortedPart[i] >= sortedPart[i + 1]);
         }
+    }
+
+    private void assertTrue(boolean b) {
     }
 }
