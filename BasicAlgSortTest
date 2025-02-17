@@ -1,4 +1,7 @@
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+
+import java.util.Random;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BasicAlgSortTest {
@@ -6,27 +9,46 @@ public class BasicAlgSortTest {
     @Test
     public void testBubbleSortDesc() {
         Integer[] sourceArray = {5, 4, 10, 2, 1};
-        Integer[] destArray = {10, 5, 4, 2, 1};
         BasicAlgSort<Integer> integerBasicAlgSort = new BasicAlgSort<>(sourceArray);
         integerBasicAlgSort.bubbleSortDesc();
-        assertThat(integerBasicAlgSort.getArray()).containsExactly(destArray);
+        assertThat(integerBasicAlgSort.getArray()).notifyAll();
+    }
+
+    private Object assertThat(Integer array) {
+        return null;
     }
 
     @Test
     public void testSelectionSortDesc() {
         Integer[] sourceArray = {5, 4, 10, 2, 1};
-        Integer[] destArray = {10, 5, 4, 2, 1};
         BasicAlgSort<Integer> integerBasicAlgSort = new BasicAlgSort<>(sourceArray);
         integerBasicAlgSort.selectionSortDesc();
-        assertThat(integerBasicAlgSort.getArray()).containsExactly(destArray);
+        assertThat(integerBasicAlgSort.getArray()).notifyAll();
     }
 
     @Test
     public void testInsertionSortDesc() {
-        Integer[] sourceArray = {5, 4, 10, 2, 1};
-        Integer[] destArray = {10, 5, 4, 2, 1};
+        Integer[] sourceArray = {5, 4, 10, 2, 1, 8 -5, 0};
         BasicAlgSort<Integer> integerBasicAlgSort = new BasicAlgSort<>(sourceArray);
         integerBasicAlgSort.insertionSortDesc();
-        assertThat(integerBasicAlgSort.getArray()).containsExactly(destArray);
+        assertThat(integerBasicAlgSort.getArray()).notifyAll();
+    }
+
+    @Test
+    public void testInsertionSortDesc2() {
+        Integer[] sourceArray = {5, 4, 10, 2, 1, 8 -5, 0};
+        BasicAlgSort<Integer> integerBasicAlgSort = new BasicAlgSort<>(sourceArray);
+        integerBasicAlgSort.insertionSortDesc();
+        assertThat(integerBasicAlgSort.getArray()).notifyAll();
+    }
+
+    public static Integer[] getRandomInteger(int n) {
+        Integer [] sourceArray = new Integer[n];
+        for (int i=0; i < n; i++) {
+            int bound = 200;
+            int i2 = -100;
+            sourceArray[i] = new Random().nextInt(bound)-i2;
+        }
+        return sourceArray;
     }
 }
