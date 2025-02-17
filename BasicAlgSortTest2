@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BasicAlgSortTest {
+public class BasicAlgSortTest2 {
 
     @Test
     public void testBubbleSortDescending() {
