@@ -42,19 +42,6 @@ public class BasicAlgSort<T extends Comparable<T>> {
         return array;
     }
 
-    public static void main(String[] args) {
-        Integer[] numbers = generateRandomArray(10, -100, 100);
-        BasicAlgSort<Integer> sorter = new BasicAlgSort<>(numbers);
-
-        System.out.println("Before sorting:");
-        sorter.printArray();
-
-        sorter.bubbleSortDescending(2, 7);
-
-        System.out.println("After sorting (descending) in range [2, 7]:");
-        sorter.printArray();
-    }
-
     public void bubbleSortDesc() {
     }
 
