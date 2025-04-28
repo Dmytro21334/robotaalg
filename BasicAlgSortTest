@@ -9,7 +9,7 @@ public class BasicAlgSortTest {
     @Test
     public void testBubbleSortDesc() {
         Integer[] sourceArray = {5, 4, 10, 2, 1};
-        BasicAlgSort<Integer> sorter = new BasicAlgSort<>(sourceArray);
+        BasicAlgSort sorter = new BasicAlgSort(sourceArray);
         sorter.bubbleSortDesc();
 
         Integer[] expected = {10, 5, 4, 2, 1};
@@ -19,7 +19,7 @@ public class BasicAlgSortTest {
     @Test
     public void testSelectionSortDesc() {
         Integer[] sourceArray = {5, 4, 10, 2, 1};
-        BasicAlgSort<Integer> sorter = new BasicAlgSort<>(sourceArray);
+        BasicAlgSort sorter = new BasicAlgSort(sourceArray);
         sorter.selectionSortDesc();
 
         Integer[] expected = {10, 5, 4, 2, 1};
@@ -29,7 +29,7 @@ public class BasicAlgSortTest {
     @Test
     public void testInsertionSortDesc() {
         Integer[] sourceArray = {5, 4, 10, 2, 1, 8, -5, 0};
-        BasicAlgSort<Integer> sorter = new BasicAlgSort<>(sourceArray);
+        BasicAlgSort sorter = new BasicAlgSort(sourceArray);
         sorter.insertionSortDesc();
 
         Integer[] expected = {10, 8, 5, 4, 2, 1, 0, -5};
@@ -39,7 +39,7 @@ public class BasicAlgSortTest {
     @Test
     public void testRandomArraySortBubble() {
         Integer[] sourceArray = getRandomInteger(20);
-        BasicAlgSort<Integer> sorter = new BasicAlgSort<>(sourceArray.clone());
+        BasicAlgSort sorter = new BasicAlgSort(sourceArray.clone());
 
         sorter.bubbleSortDesc();
         Integer[] sorted = sorter.getArray();
