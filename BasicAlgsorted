@@ -6,14 +6,14 @@ public class BasicAlgsorted {
     @Test
     public void testBubbleSortDescending() {
         Integer[] array = BasicAlgSort.generateRandomArray(10, -100, 100);
-        BasicAlgSort<Integer> sorter = new BasicAlgSort<>(array);
+        BasicAlgSort sorter = new BasicAlgSort(array);
         sorter.bubbleSortDescending(2, 7);
 
         Integer[] sortedPart = new Integer[6];
         System.arraycopy(array, 2, sortedPart, 0, 6);
 
         for (int i = 0; i < sortedPart.length - 1; i++) {
-            assertTrue(sortedPart[i] >= sortedPart[i + 1]);  // Перевірка спадання
+            assertTrue(sortedPart[i] >= sortedPart[i + 1]); 
         }
     }
 }
