@@ -1,11 +1,11 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class BasicAlgSort<T extends Comparable<T>> {
+public class BasicAlgSort {
 
-    private final T[] array;
+    private final Integer[] array;
 
-    public BasicAlgSort(T[] array) {
+    public BasicAlgSort(Integer[] array) {
         this.array = array;
     }
 
@@ -16,15 +16,49 @@ public class BasicAlgSort<T extends Comparable<T>> {
 
         for (int i = leftIndex; i < rightIndex; i++) {
             for (int j = leftIndex; j < rightIndex - (i - leftIndex); j++) {
-                if (array[j].compareTo(array[j + 1]) < 0) {
+                if (array[j] < array[j + 1]) {
                     swap(j, j + 1);
                 }
             }
         }
     }
 
+    public void bubbleSortDesc() {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - 1 - i; j++) {
+                if (array[j] < array[j + 1]) {
+                    swap(j, j + 1);
+                }
+            }
+        }
+    }
+
+    public void selectionSortDesc() {
+        for (int i = 0; i < array.length - 1; i++) {
+            int maxIndex = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] > array[maxIndex]) {
+                    maxIndex = j;
+                }
+            }
+            swap(i, maxIndex);
+        }
+    }
+
+    public void insertionSortDesc() {
+        for (int i = 1; i < array.length; i++) {
+            Integer key = array[i];
+            int j = i - 1;
+            while (j >= 0 && array[j] < key) {
+                array[j + 1] = array[j];
+                j--;
+            }
+            array[j + 1] = key;
+        }
+    }
+
     private void swap(int i, int j) {
-        T temp = array[i];
+        Integer temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
@@ -42,16 +76,7 @@ public class BasicAlgSort<T extends Comparable<T>> {
         return array;
     }
 
-    public void bubbleSortDesc() {
-    }
-
-    public T getArray() {
-        return null;
-    }
-
-    public void selectionSortDesc() {
-    }
-
-    public void insertionSortDesc() {
+    public Integer[] getArray() {
+        return array;
     }
 }
