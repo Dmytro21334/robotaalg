@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -13,8 +14,7 @@ public class BasicAlgsorted {
         System.arraycopy(array, 2, sortedPart, 0, 6);
 
         for (int i = 0; i < sortedPart.length - 1; i++) {
-            assertTrue(sortedPart[i] >= sortedPart[i + 1]); 
+            Assertions.assertTrue(sortedPart[i] >= sortedPart[i + 1]);
         }
     }
 }
-
